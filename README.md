@@ -2,6 +2,9 @@
 
 > 网页在线聊天系统前端
 
+## Front-end Stack
+> `Vue`、`Vuex`、`Element-UI`、`Axios`、`ES6`、`WebSocket`、`WebRTC`等。
+
 ## Description 
 
 - 启动本项目前，先修改一下`src/views/CoArtBoard.vue`和`src/views/CoVideo.vue`这2个文件中的`iceServers`参数值，即配置`coturn`中继服务器信息。如何搭建`coturn`服务器？[传送门](https://www.jianshu.com/p/7e9d0af05396)
