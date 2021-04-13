@@ -114,6 +114,7 @@
           this.loading = true
           this.$http.addFeedBack({
             userId: this.userInfo.uid,
+            username: this.userInfo.username,
             feedBackContent: this.feedBackContent
           }).then(res => {
             this.loading = false

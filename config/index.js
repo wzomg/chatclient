@@ -51,7 +51,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),  //编译输出的静态资源路径
     assetsSubDirectory: 'static', // 编译输出的二级目录
-    assetsPublicPath: './', // 编译发布的根目录，可配置为资源服务器域名或 CDN 域名
+    assetsPublicPath: '/frontend/', // 编译发布的根目录，可配置为资源服务器域名或 CDN 域名，Nginx 访问目录下建这个文件夹作为当前项目的访问路径
 
     /**
      * Source Maps

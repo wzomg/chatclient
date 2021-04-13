@@ -96,7 +96,7 @@
   import groupDesc from './components/GroupDesc'
   import historyMsg from './components/HistoryMsg'
   import xss from '@/utils/xss'
-  import {genGuid} from '@/utils'
+  import {genGuid, fromatTime} from '@/utils'
 
   export default {
     props: {
@@ -320,8 +320,16 @@
         const common = this.generatorMessageCommon()
         let mText = xss(this.messageText)
         //这里就暂时请求一个http get 接口来过滤掉发送的消息，应该换成 post 请求的
-        await this.$http.filterMessage(mText).then(res => {
-          if(res.data.code  === 2000) {
+        const checkSensitiveMessage = {
+          roomId: common.roomId,
+          senderId: common.senderId,
+          senderName: common.senderName,
+          type: common.conversationType,
+          message: mText,
+          time: fromatTime(new Date())
+        }
+        await this.$http.filterMessage(checkSensitiveMessage).then(res => {
+          if (res.data.code === 2000) {
             mText = res.data.data.message
           }
         })

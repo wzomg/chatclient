@@ -172,8 +172,8 @@
       },
       onlineUser(data) {
         // console.log('当前在线用户列表：', data)
-        const onlineUserIdArr = Object.values(data).map(item => item.uid)
-        this.$store.dispatch('app/SET_ONLINE_USER', onlineUserIdArr)
+        //const onlineUserIdArr = Object.values(data).map(item => item.uid)
+        this.$store.dispatch('app/SET_ONLINE_USER', data)
       },
       receiveMessage(news) {
         this.$refs['audio'].play()

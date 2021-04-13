@@ -5,13 +5,16 @@ import store from './../store'
 Vue.use(Router)
 
 const router = new Router({
-  routes: [{
-    path: '/',
-    redirect: '/chat',
-    meta: {
-      requiresAuth: true
-    }
-  },
+  mode: 'history',
+  // base: '/frontend/', //编译打包时才去掉这个注释，配置 nginx 访问相对路径的目录文件夹
+  routes: [
+    {
+      path: '/',
+      redirect: '/chat',
+      meta: {
+        requiresAuth: true
+      }
+    },
     {
       path: '/login',
       name: 'Login',

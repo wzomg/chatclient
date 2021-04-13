@@ -157,7 +157,7 @@
             this.$router.replace(next)
           } else {
             this.$message.error(message)
-            if (code === 1006) {
+            if (code === 1200) {
               this.$confirm(`你的${message}，如需恢复请联系管理员：sharezzw@zzw.com`, `通知：${message}`, {
                 // confirmButtonText: '确定',
                 // cancelButtonText: '取消',

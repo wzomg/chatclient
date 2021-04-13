@@ -31,6 +31,6 @@ export default {
   },
   /** 过滤发送的消息 */
   filterMessage(message) {
-    return request.get(`/api/sys/filterMessage?message=${message}`)
+    return request.post(`/api/sys/filterMessage`, message)
   }
 }
